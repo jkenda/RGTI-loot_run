@@ -1,0 +1,398 @@
+{
+  "nodes": [
+    {
+      "type": "camera",
+      "tag": "camera",
+      "model": "camera",
+      "translation": [0, 3, 5],
+      "rotation": [-10, 0, 0],
+      "aspect": 1,
+      "fov": 1.5,
+      "near": 0.01,
+      "far": 250
+    },
+    {
+      "type": "player",
+      "tag": "player",
+      "model": "goblinTeloGlava",
+      "translation": [2, 2, 0],
+      "mass": 1,
+      "godMode": false,
+      "colliderSize": [0.5, 1, 0.5],
+      "childrenNodes": [
+        {
+          "type": "model",
+          "tag": "roka desno",
+          "model": "goblinRokaDesno",
+          "bodyPart": true,
+          "childrenNodes": [
+            {
+              "type": "model",
+              "tag": "torch desne roke",
+              "model": "torch",
+              "translation": [0.3, 0, -0.8],
+              "childrenNodes": [
+                {
+                  "type": "light",
+                  "tag": "torch light",
+                  "translation": [0, 1, 0],
+                  "ambient": [1, 1, 1],
+                  "diffuse": [0.75, 0.75, 0.5],
+                  "specular": [0.5, 0.5, 0.5]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "model",
+          "tag": "roka levo",
+          "model": "goblinRokaLevo",
+          "bodyPart": true
+        },
+        {
+          "type": "model",
+          "tag": "noga desno",
+          "model": "goblinNogaDesno",
+          "bodyPart": true,
+          "rotation": [0, 0, 0],
+          "animation": {
+            "rotation": {
+              "type": "sin",
+              "axis": [1, 0, 0],
+              "amplitude": 0.4,
+              "frequency": 2
+            }
+          }
+        },
+        {
+          "type": "model",
+          "tag": "noga levo",
+          "model": "goblinNogaLevo",
+          "bodyPart": true,
+          "animation": {
+            "rotation": {
+              "type": "sin",
+              "axis": [1, 0, 0],
+              "amplitude": 0.4,
+              "frequency": 2,
+              "fi": 3.1415
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "model",
+      "tag": "platforma",
+      "model": "platforma"
+    },
+    {
+      "type": "model",
+      "tag": "lava",
+      "model": "lava",
+      "trap": true,
+      "trapIndex": 3,
+      "translation": [0, -10, 0],
+      "scale": [2, 5, 2],
+      "childrenNodes": [
+        {
+          "type": "light",
+          "tag": "lava light",
+          "caster": "plane",
+          "translation": [0, 0.501, 0],
+          "normal": [0, 1, 0],
+          "ambient": [0, 0, 0],
+          "diffuse": [0.7, 0.3, 0.3],
+          "specular": [0.5, 0.5, 0.3],
+          "animation": {
+            "type": "perlin",
+            "amplitude": 0.1,
+            "frequency": 0.1
+          }
+        },
+        {
+          "type": "light",
+          "tag": "lava light",
+          "caster": "plane",
+          "translation": [0, 0.501, 0],
+          "attenuation": [5, 0, 0],
+          "normal": [0, -1, 0],
+          "ambient": [0, 0, 0],
+          "diffuse": [1, 1, 1],
+          "specular": [0.5, 0.5, 0.5],
+          "animation": {
+            "type": "perlin",
+            "amplitude": 0.1,
+            "frequency": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "type": "model",
+      "tag": "chest",
+      "model": "chest",
+      "translation": [5, 0.5, -43],
+      "rotation": [0, 180, 0]
+    },
+    {
+      "type": "model",
+      "tag": "žaga 1",
+      "model": "saw",
+      "trap": true,
+      "trapIndex": 2,
+      "shape": "cylinder",
+      "translation": [0, 1.11, -9],
+      "animation": {
+        "translation": {
+          "type": "sin",
+          "axis": [1, 0, 0],
+          "amplitude": 2,
+          "frequency": 0.2,
+          "fi": 0
+        },
+        "rotation": {
+          "type": "linear",
+          "axis": [0, 0, 1],
+          "velocity": 20
+        }
+      }
+    },
+    {
+      "type": "model",
+      "tag": "žaga 2",
+      "model": "saw",
+      "trap": true,
+      "trapIndex": 2,
+      "shape": "cylinder",
+      "translation": [0, 1.11, -12],
+      "animation": {
+        "translation": {
+          "type": "cos",
+          "axis": [1, 0, 0],
+          "amplitude": 2,
+          "frequency": 0.3,
+          "fi": 0
+        },
+        "rotation": {
+          "type": "linear",
+          "axis": [0, 0, 1],
+          "velocity": 20
+        }
+      }
+    },
+    {
+      "type": "model",
+      "tag": "žaga 3",
+      "model": "saw",
+      "trap": true,
+      "trapIndex": 2,
+      "shape": "cylinder",
+      "translation": [0, 1.11, -15],
+      "animation": {
+        "translation": {
+          "type": "sin",
+          "axis": [1, 0, 0],
+          "amplitude": 2,
+          "frequency": 0.4,
+          "fi": 0
+        },
+        "rotation": {
+          "type": "linear",
+          "axis": [0, 0, 1],
+          "velocity": 20
+        }
+      }
+    },
+    {
+      "type": "model",
+      "tag": "žaga 4",
+      "model": "saw",
+      "trap": true,
+      "trapIndex": 2,
+      "shape": "cylinder",
+      "translation": [0, 1.11, -18],
+      "animation": {
+        "translation": {
+          "type": "cos",
+          "axis": [1, 0, 0],
+          "amplitude": 2,
+          "frequency": 0.5,
+          "fi": 0
+        },
+        "rotation": {
+          "type": "linear",
+          "axis": [0, 0, 1],
+          "velocity": 20
+        }
+      }
+    },
+    {
+      "type": "model",
+      "tag": "nihalo",
+      "model": "nihalo",
+      "scale": [2,2,2],
+      "trap": true,
+      "trapIndex": 2,
+      "translation": [5, 48.5, -38],
+      "animation": {
+        "rotation": {
+          "type": "sin",
+          "axis": [0, 0, 1],
+          "amplitude": 0.2,
+          "frequency": 0.3
+        }
+      }
+    },
+    {
+      "type": "model",
+      "tag": "wooden log",
+      "model": "log",
+      "trap": true,
+      "trapIndex": 2,
+      "shape": "cylinder",
+      "translation": [0, 1, -30],
+      "rotation": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "animation": {
+        "translation": {
+          "type": "sin",
+          "axis": [0, 0, 1],
+          "amplitude": 6,
+          "frequency": 0.2,
+          "fi": 0
+        },
+        "rotation": {
+          "type": "sin",
+          "axis": [1, 0, 0],
+          "amplitude": 6,
+          "frequency": 0.2,
+          "fi": 0
+        }
+      }
+    },
+    {
+      "type": "model",
+      "tag": "campfire 1",
+      "model": "campfire",
+      "translation": [-1, 0, 0],
+      "childrenNodes": [
+        {
+          "type": "light",
+          "tag": "campfire light",
+          "translation": [0, 1, 0],
+          "ambient": [1, 1, 1],
+          "diffuse": [0.75, 0.75, 0.5],
+          "specular": [1, 1, 1],
+          "animation": {
+            "type": "perlin",
+            "amplitude": 0.2,
+            "frequency": 1,
+            "fi": 0
+          }
+        }
+      ]
+    },
+    {
+      "type": "model",
+      "tag": "campfire 2",
+      "model": "campfire",
+      "translation": [5, 0, -47],
+      "childrenNodes": [
+        {
+          "type": "light",
+          "tag": "campfire light",
+          "translation": [0, 1, 0],
+          "ambient": [0.1, 0.1, 0.1],
+          "diffuse": [0.75, 0.75, 0.5],
+          "specular": [0.5, 0.5, 0.5]
+        }
+      ]
+    },
+    {
+      "type": "model",
+      "tag": "torch 1",
+      "model": "torch",
+      "translation": [2, 0, -8],
+      "childrenNodes": [
+        {
+          "type": "light",
+          "tag": "torch light",
+          "translation": [0, 1, 0],
+          "ambient": [1, 1, 1],
+          "diffuse": [0.75, 0.75, 0.5],
+          "specular": [1, 1, 1]
+        }
+      ]
+    },
+    {
+      "type": "model",
+      "tag": "torch 2",
+      "model": "torch",
+      "translation": [2, 0, -21],
+      "childrenNodes": [
+        {
+          "type": "light",
+          "tag": "torch light",
+          "translation": [0, 1, 0],
+          "ambient": [1, 1, 1],
+          "diffuse": [0.75, 0.75, 0.5],
+          "specular": [0.5, 0.5, 0.5]
+        }
+      ]
+    },
+    {
+      "type": "model",
+      "tag": "torch 3",
+      "model": "torch",
+      "translation": [7, 0, -35],
+      "childrenNodes": [
+        {
+          "type": "light",
+          "tag": "torch light",
+          "translation": [0, 1, 0],
+          "ambient": [1, 1, 1],
+          "diffuse": [0.75, 0.75, 0.5],
+          "specular": [0.5, 0.5, 0.5]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "camera": { "audio": "lava.mp3" },
+    "platforma": { "mesh": "platforma.json", "texture": "rock" },
+    "lava": { "mesh": "lava.json", "texture": "lava" },
+    "chest": { "mesh": "chest.json", "texture": "chest" },
+    "saw": { "mesh": "saw.json", "texture": "saw", "audio": "saw.mp3" },
+    "nihalo": { "mesh": "nihalo.json", "texture": "nihalo" },
+    "log": { "mesh": "log.json", "texture": "log" },
+    "torch": { "mesh": "torch.json", "texture": "torch" },
+    "campfire": { "mesh": "campfire.json", "texture": "campfire", "audio": "fire.mp3" },
+    "goblinTeloGlava": {
+      "mesh": "goblinPlayerCut/goblinTeloGlava.json",
+      "texture": "goblinPlayer",
+      "audio": "footsteps.mp3"
+    },
+    "goblinNogaDesno": {
+      "mesh": "goblinPlayerCut/goblinNogaDesno.json",
+      "texture": "goblinPlayer"
+    },
+    "goblinNogaLevo": {
+      "mesh": "goblinPlayerCut/goblinNogaLevo.json",
+      "texture": "goblinPlayer"
+    },
+    "goblinRokaDesno": {
+      "mesh": "goblinPlayerCut/goblinRokaDesno.json",
+      "texture": "goblinPlayer"
+    },
+    "goblinRokaLevo": {
+      "mesh": "goblinPlayerCut/goblinRokaLevo.json",
+      "texture": "goblinPlayer"
+    },
+    "goblinWholeModel": {
+      "mesh": "goblinWholeModel.json",
+      "texture": "goblinPlayer"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+/* css file for Heads Up Display */
+.overlay {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+.hearts {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 25%;
+  height: 10%;
+}
+
+.hearts img {
+  max-width: auto;
+  max-height: 100%;
+}
+
+.coords {
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  width: 3%;
+  color: white;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>LootRun</title>
+
+  <link rel="stylesheet" type="text/css" href="common/style.css" />
+  <link rel="stylesheet" type="text/css" href="common/menus.css" />
+  <link rel="stylesheet" type="text/css" href="common/hud.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="lib/gl-matrix-min.js"></script>
+  <script type="text/javascript" src="lib/ammo.js"></script>
+  <script type="module" src="game/game.js"></script>
+  <!-- <script src="game/menus.js"></script> -->
+</head>
+
+<body>
+
+  <div class="overlay">
+    <button type="button" id="go-to-menu">Menu</button>
+  </div>
+
+  <div class="coords">
+    <div id="divX">
+      0
+    </div>
+    <div id="divY">
+      0
+    </div>
+    <div id="divZ">
+      0
+    </div>
+    <div>
+      FPS: <span id="divFPS">0</span>
+    </div>
+  </div>
+
+  <div class="hearts">
+    <img src="./common/images/redHeart.png" alt="heart 1" id="oneHp">
+    <img src="./common/images/redHeart.png" alt="heart 2" id="twoHp">
+    <img src="./common/images/redHeart.png" alt="heart 3" id="threeHp">
+  </div>
+
+  <div class="ui-common" id="main-menu">
+    <div class="header">
+      <h1>Loot Run</h1>
+    </div>
+    <div class="mid">
+      <button type="button" id="start-game">Start Game</a>
+    </div>
+    <div class="how-to">
+      <h2>HOW TO PLAY</h2>
+      Use WASD to move
+      <br>
+      SPACE to jump
+    </div>
+    <div class="info">
+      <h2>INFO</h2>
+      Avoid the obstacles and get to the treasure at the end. Good luck!
+      <br>
+      Made by Matej Urbas, Jakob Kenda and Žan Benedejčič for the RGTI class.
+    </div>
+  </div>
+
+  <div class="ui-common" id="death-menu">
+    <div class="top">
+      <h1>You died, try again.</h1>
+    </div>
+    <div class="bottom">
+      <div class="left">
+        <button type="button" id="go-to-menu-from-death">Menu</button>
+      </div>
+      <div class="right">
+        <button type="button" id="restart-game">Try again.</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui-common" id="victory-menu">
+    <div class="top">
+      <h1>You won! Congratulations!</h1>
+    </div>
+    <div class="bottom">
+      <button type="button" id="go-to-menu-from-victory">Menu</button>
+    </div>
+  </div>
+
+  <div class="fullscreen">
+    <canvas></canvas>
+  </div>
+
+</body>
+
+</html>
