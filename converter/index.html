@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>OBJ - JSON converter</title>
+        <style>
+            html, body {
+                height: 100%;
+                padding: 0; margin: 0;
+            }
+            body {
+                display: flex;
+                width: 100%;
+            }
+            div {
+                width: 100%;
+                padding: 0; margin: 0;
+            }
+            textarea {
+                margin: 0;
+                width: 100%; height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <textarea id="obj"></textarea>
+        </div>
+        <div>
+            <textarea id="json"></textarea>
+        </div>
+    </body>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const obj = document.querySelector("#obj")
+            const json = document.querySelector("#json")
+    
+            json.value = convert(obj.value)
+    
+            obj.addEventListener("input", () => {
+                json.value = convert(obj.value)
+            })
+        })
+
+    </script>
+</html>
