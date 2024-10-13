@@ -30,6 +30,39 @@
         </div>
     </body>
     <script>
+        function convert(obj) {
+            const lines = obj.split("\n")
+            const model = {
+                vertices: [],
+                indices: [],
+                camera: {
+                    rotation: [0, 0, 0],
+                    translation: [0, 0, 0],
+                    perspective: 1.57079632679
+                },
+                model: {
+                    rotation: [1, 0, 0],
+                    translation: [0, 0, 0],
+                    scale: [2, 2, 2]
+                }
+            }
+
+            for (const line of lines) {
+                const words = line.split(/\s+\//)
+                let [type, x] = words
+                if (type == "v") {
+                    let [type, x, y, z] = words
+                    model.vertices.push(Number(x), Number(y), Number(z))
+                }
+                else if (type == "f") {
+                    for (let i = 2; i < words.length-1; i++) {
+                        y = words[i]; z = words[i+1]
+                        model.indices.push(Number(x) - 1, Number(y) - 1, Number(z) - 1)
+                    }
+                }
+            }
+            return JSON.stringify(model, null, 2)
+        }
 
         document.addEventListener("DOMContentLoaded", () => {
             const obj = document.querySelector("#obj")
